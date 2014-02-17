@@ -1,10 +1,10 @@
-module processProjectFacts
+module src::processProjectFacts
 
 import Prelude;
-import projectFactsRepository;
+import src::projectFactsRepository;
 import util::Math;
-import Logging;
-import Caching;
+import src::Logging;
+import src::Caching;
 		    
 data yearlyFact =
 			sum_loc_added_fact(num i) |

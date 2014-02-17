@@ -1,12 +1,12 @@
-module projectFactsRepository
+module src::projectFactsRepository
 
 import Prelude;
 import lang::xml::DOM;
-import Logging;
-import Caching;
+import src::Logging;
+import src::Caching;
 import util::Maybe;
 
-private loc LocalOhlohProjectsRepository = |cwd:///../data|;
+private loc LocalOhlohProjectsRepository = |cwd:///data|;
 private loc ProjectNamesListFile = LocalOhlohProjectsRepository + "ProjectNamesList.txt";
 private loc ProjectsFile = LocalOhlohProjectsRepository + "Projects.xml";
 private str MetaDataFileName = "MetaData.xml";

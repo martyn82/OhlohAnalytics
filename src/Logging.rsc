@@ -1,10 +1,10 @@
-module Logging
+module src::Logging
 
 import DateTime;
 import ToString;
 import IO;
 
-private loc LogsDirectory = |cwd:///../logs|;
+private loc LogsDirectory = |cwd:///logs|;
 private str separator = "   ";
 private str extension = ".txt";
 

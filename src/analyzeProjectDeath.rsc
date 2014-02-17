@@ -1,8 +1,8 @@
-module analyzeProjectDeath
+module src::analyzeProjectDeath
 
 import Prelude;
-import processProjectFacts;
-import projectFactsRepository;
+import src::processProjectFacts;
+import src::projectFactsRepository;
 
 alias projectActivityStatus = rel[str, list[tuple[str, num, bool]]];
 

@@ -1,13 +1,13 @@
-module obtainProjectFacts
+module src::obtainProjectFacts
 
 import Prelude;
-import projectFactsRepository;
-import Logging;
-import Sleep;
+import src::projectFactsRepository;
+import src::Logging;
+import src::Sleep;
 import lang::xml::DOM;
 import util::Math;
 
-private loc OhlohAPIKeyFile = |cwd:///../OhlohAPIKeys.txt|;
+private loc OhlohAPIKeyFile = |cwd:///OhlohAPIKeys.txt|;
 private str OhlohBaseURL = "www.ohloh.net";
 private int timeToSleepBetweenQueries = 250; //milliseconds
 private int projectsPerAPIKey = 80; 

@@ -1,15 +1,15 @@
-module dataValidation
+module src::dataValidation
 
 import Prelude;
-import Logging;
-import projectFactsRepository;
+import src::Logging;
+import src::projectFactsRepository;
 import ValueIO;
 import List;
 
 alias splitDataTuple = tuple[list[str] goodData, list[str] badData]; 
 
 private loc logFile = openLogFile("data-validation-log");
-public loc validationResultsDir = |cwd:///../validation|;
+public loc validationResultsDir = |cwd:///validation|;
 
 private str RepositoryTypeSVN = "SvnRepository";
 private str RepositoryTypeSVNSync = "SvnSyncRepository";

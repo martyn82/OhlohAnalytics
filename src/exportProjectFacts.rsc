@@ -1,17 +1,17 @@
-module exportProjectFacts
+module src::exportProjectFacts
 
 import Prelude;
-import processProjectFacts;
-import projectFactsRepository;
-import Logging;
+import src::processProjectFacts;
+import src::projectFactsRepository;
+import src::Logging;
 import lang::csv::IO;
 import util::Maybe;
 import IO;
-import analyzeProjectDeath;
-import analyzeProjectMetaData;
-import dataValidation;
+import src::analyzeProjectDeath;
+import src::analyzeProjectMetaData;
+import src::dataValidation;
 
-public loc OutputFilesDirectory = |cwd:///../output|;
+public loc OutputFilesDirectory = |cwd:///output|;
 
 public void validateAndOutputFacts() {
 	exportProjectsMetaData(getProjectNamesInRepository());

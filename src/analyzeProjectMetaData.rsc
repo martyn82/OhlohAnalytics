@@ -1,7 +1,7 @@
-module analyzeProjectMetaData
+module src::analyzeProjectMetaData
 
 import Prelude;
-import projectFactsRepository;
+import src::projectFactsRepository;
 import analysis::formalconcepts::FCA;
 import lang::dot::Dot;
 

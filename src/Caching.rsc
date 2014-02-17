@@ -1,10 +1,10 @@
-module Caching
+module src::Caching
 
 import Prelude;
 import ValueIO;
-import Logging;
+import src::Logging;
 
-public loc CacheDirectory = |cwd:///../cache|;
+public loc CacheDirectory = |cwd:///cache|;
 
 public &T getValueFromCache(str CachedValueName, type[&T] CachedObjectType, &T () getUpdatedValue) {
 	if(exists(CacheDirectory + CachedValueName)) {
