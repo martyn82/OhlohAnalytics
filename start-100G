@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+java -Xmx102400m -Xms102400 -Xss128m -jar /home/ubuntu/local/rascal/rascal-0.6.2.jar
