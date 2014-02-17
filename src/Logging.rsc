@@ -19,6 +19,7 @@ public loc openLogFile(str name) {
 }
 
 public bool logToFile(loc logFile, str identification, str message) {
-	appendToFile(logFile, toString(now()) + separator + identification + separator + message + "\n");
+//	appendToFile(logFile, toString(now()) + separator + identification + separator + message + "\n");
+	logToConsole(identification, message);
 	return true;
 }
