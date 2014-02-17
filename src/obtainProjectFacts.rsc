@@ -7,7 +7,7 @@ import Sleep;
 import lang::xml::DOM;
 import util::Math;
 
-private loc OhlohAPIKeyFile = |project://OhlohAnalytics/OhlohAPIKeys.txt|;
+private loc OhlohAPIKeyFile = |cwd:///../OhlohAPIKeys.txt|;
 private str OhlohBaseURL = "www.ohloh.net";
 private int timeToSleepBetweenQueries = 250; //milliseconds
 private int projectsPerAPIKey = 80; 

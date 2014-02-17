@@ -6,7 +6,7 @@ import Logging;
 import Caching;
 import util::Maybe;
 
-private loc LocalOhlohProjectsRepository = |project://OhlohAnalytics/data|;
+private loc LocalOhlohProjectsRepository = |cwd:///../data|;
 private loc ProjectNamesListFile = LocalOhlohProjectsRepository + "ProjectNamesList.txt";
 private loc ProjectsFile = LocalOhlohProjectsRepository + "Projects.xml";
 private str MetaDataFileName = "MetaData.xml";
@@ -341,7 +341,7 @@ public list[str] getProjectNamesListFromRepository() {
 
 private list[str] extractProjectNames (str XML) {
 	list[str] result = [];
-	top-down visit(getXMLContentsDOM(XML)) {
+	top-down visit(getXMLContentsDOM("", XML)) {
 		case element(_,"url_name",[charData(str projectName)]):
 			 result += projectName;
 	}

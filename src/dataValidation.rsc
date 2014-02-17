@@ -4,15 +4,23 @@ import Prelude;
 import Logging;
 import projectFactsRepository;
 import ValueIO;
+import List;
 
 alias splitDataTuple = tuple[list[str] goodData, list[str] badData]; 
 
-private	loc logFile = openLogFile("data-validation-log");
-public loc validationResultsDir = |project://OhlohAnalytics/validation|;
+private loc logFile = openLogFile("data-validation-log");
+public loc validationResultsDir = |cwd:///../validation|;
 
 private str RepositoryTypeSVN = "SvnRepository";
 private str RepositoryTypeSVNSync = "SvnSyncRepository";
 
+public list[str] readValidatedProjects() =
+	readTextValueFile( #list[str], validationResultsDir + "post-project-level-validation-projects-remaining.value" );
+
+public list[str] readValidatedProjects(int startIndex, int count) {
+	list[str] projects = readValidatedProjects();
+	return slice( projects, startIndex, count );
+}
 
 public list[str] validateDataOnProjectLevel () {
 

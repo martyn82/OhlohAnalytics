@@ -4,7 +4,7 @@ import Prelude;
 import ValueIO;
 import Logging;
 
-public loc CacheDirectory = |project://OhlohAnalytics/cache|;
+public loc CacheDirectory = |cwd:///../cache|;
 
 public &T getValueFromCache(str CachedValueName, type[&T] CachedObjectType, &T () getUpdatedValue) {
 	if(exists(CacheDirectory + CachedValueName)) {

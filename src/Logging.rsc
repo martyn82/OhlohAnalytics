@@ -4,7 +4,7 @@ import DateTime;
 import ToString;
 import IO;
 
-private loc LogsDirectory = |project://OhlohAnalytics/logs|;
+private loc LogsDirectory = |cwd:///../logs|;
 private str separator = "   ";
 private str extension = ".txt";
 
