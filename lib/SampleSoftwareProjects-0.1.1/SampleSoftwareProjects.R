@@ -172,7 +172,8 @@ next.projects <- function(N, sample, universe, space, configuration=NA) {
     
     print(paste("Found", n, "projects. New score", sc.score, Sys.time()))
     
-    if (sc.score>=1.0) break; # we have covered everything
+    # next line is commented out to get a fixed length set
+    # if (sc.score>=1.0) break; # we have covered everything
   }
 
   sc <- score.projects(rbind(sample, result[,1:ncol(sample)]), universe, space, configuration)
