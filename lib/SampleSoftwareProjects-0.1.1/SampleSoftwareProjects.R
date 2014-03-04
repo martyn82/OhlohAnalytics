@@ -187,4 +187,6 @@ next.projects <- function(N, sample, universe, space, configuration=NA) {
 
 # np <- next.projects(10, sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
 
+# write.csv(np[1], "sample.csv")
+
 # score.2 <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count, configuration=c(create.numeric.similarity.sd, NA))
