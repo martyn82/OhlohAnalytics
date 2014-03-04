@@ -1,10 +1,12 @@
 #!/usr/bin/env php
 <?php
 
+/* This script will extract the project ID for a named project and output it to projects.csv */
+
 const CSV_DELIMITER = ';';
 const CSV_ENCLOSURE = '"';
 
-$projectNamesList = 'ProjectNamesList.txt';
+$projectNamesList = 'SampleProjectNamesList.txt';
 $projectDataFolder = 'projects/';
 $finalProjectsFile = 'projects.csv';
 
