@@ -29,10 +29,10 @@ $inputHandle = fopen( $inputFile, 'r' );
 $outputHandle = fopen( $outputFile, 'w' );
 
 $header = fgetcsv( $inputHandle, null, ';' );
-fputcsv( $outputHandle, $header );
+fputcsv( $outputHandle, $header, ';' );
 
 $projectIds = array();
-$facts = 0;
+$totalProjects = 0;
 
 while ( !feof( $inputHandle ) ) {
 	$dataLine = fgetcsv( $inputHandle, null, ';' );
@@ -41,6 +41,7 @@ while ( !feof( $inputHandle ) ) {
 		continue;
 	}
 	
+	$totalProjects++;
 	$dataLine = array_combine( $header, $dataLine );
 	
 	$projectId = $dataLine[ 'project_id' ];
@@ -57,12 +58,10 @@ while ( !feof( $inputHandle ) ) {
 	else {
 		$projectIds[ $projectId ]++;
 	}
-	
-	$facts++;
 }
 
 fclose( $outputHandle );
 fclose( $inputHandle );
 
 $projects = count( $projectIds );
-fwrite( STDERR, "Filtered to {$facts} facts from {$projects} projects." . PHP_EOL );
+fwrite( STDERR, "Filtered {$totalProjects} projects to a sample of {$projects} projects." . PHP_EOL );
