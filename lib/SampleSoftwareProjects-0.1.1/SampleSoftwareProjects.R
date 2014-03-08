@@ -181,12 +181,13 @@ next.projects <- function(N, sample, universe, space, configuration=NA) {
 }
 
 # url <- "http://sailhome.cs.queensu.ca/replication/representativeness/masterdata.txt"
-# ohloh <- read.delim(url, header=T, na.strings=c("", "NA"))
-# sample <- ohloh[ohloh$name=="Mozilla Firefox",]
-# score <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
+url <- "masterdata_filtered.csv"
+ohloh <- read.delim(url, header=T, na.strings=c("", "NA"))
+sample <- ohloh[ohloh$name=="Mozilla Firefox",]
+score <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
 
-# np <- next.projects(10, sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
+np <- next.projects(250, sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
 
-# write.csv(np[1], "sample.csv")
+write.csv(np[1], "sample.csv")
 
 # score.2 <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count, configuration=c(create.numeric.similarity.sd, NA))
