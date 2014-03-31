@@ -183,7 +183,7 @@ next.projects <- function(N, sample, universe, space, configuration=NA) {
 # url <- "http://sailhome.cs.queensu.ca/replication/representativeness/masterdata.txt"
 url <- "masterdata_filtered.csv"
 ohloh <- read.delim(url, header=T, na.strings=c("", "NA"))
-sample <- ohloh[ohloh$name=="JUnit",]
+sample <- ohloh[ohloh$id==9,]
 score <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
 
 np <- next.projects(250, sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
