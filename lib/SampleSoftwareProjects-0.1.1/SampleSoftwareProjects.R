@@ -184,9 +184,11 @@ next.projects <- function(N, sample, universe, space, configuration=NA) {
 url <- "masterdata_filtered.csv"
 ohloh <- read.delim(url, header=T, na.strings=c("", "NA"))
 sample <- ohloh[ohloh$name=="Mozilla Firefox",]
-score <- score.projects(sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
 
 np <- next.projects(250, sample, universe=ohloh, id ~ total_code_lines + twelve_month_contributor_count)
+
+uni <- read.delim("masterdata.txt", header=T, na.strings=c("", "NA"))
+score <- score.projects(np[1], universe=uni, id ~ total_code_lines + twelve_month_contributor_count)
 
 write.csv(np[1], "sample.csv")
 
